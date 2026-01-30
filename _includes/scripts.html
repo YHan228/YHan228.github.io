@@ -108,13 +108,5 @@
     // Run once on load
     scrollHandler();
   }
-
-  // Disable the jQuery theme toggle to prevent conflicts
-  // This runs after jQuery's document.ready
-  if (typeof jQuery !== 'undefined') {
-    jQuery(function() {
-      jQuery('#theme-toggle').off('click');
-    });
-  }
 })();
 </script>

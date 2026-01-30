@@ -456,6 +456,13 @@ body {
   padding-left: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
+  /* Make archive span full grid when it's alone */
+  grid-column: 1 / -1;
+}
+
+/* When sidebar exists, archive should only take second column */
+.sidebar ~ .archive {
+  grid-column: auto;
 }
 
 .list__item {
