@@ -141,3 +141,38 @@ pre, code {
 .floating-controls {
   display: none !important;
 }
+
+/* Fix page width - ensure content is not cut off */
+.page {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.page__content {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.archive {
+  width: 100% !important;
+}
+
+/* Ensure proper layout on desktop */
+@media (min-width: 64em) {
+  .page {
+    padding-right: 0 !important;
+  }
+}
+
+/* Ensure sidebar doesn't squeeze content */
+.sidebar {
+  opacity: 1 !important;
+}
+
+/* Make sure text doesn't overflow */
+p, li, h1, h2, h3, h4 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
