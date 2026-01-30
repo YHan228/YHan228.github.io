@@ -2,74 +2,84 @@
 
 {% include analytics.html %}
 
-<!-- Theme Toggle -->
-<button class="theme-toggle" id="theme-toggle-btn" aria-label="Toggle theme">
-  <span id="theme-icon">&#9680;</span>
+<!-- Theme Toggle Button -->
+<button class="theme-toggle" id="theme-toggle-btn" type="button" aria-label="Toggle dark mode">
+  <span id="theme-icon"></span>
 </button>
 
 <script>
-// Theme Toggle - defined globally
-function toggleTheme() {
-  var html = document.documentElement;
-  var isDark = html.getAttribute('data-theme') === 'dark';
-  var newTheme = isDark ? '' : 'dark';
-
-  html.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-
-  var icon = document.getElementById('theme-icon');
-  if (icon) {
-    icon.innerHTML = isDark ? '&#9680;' : '&#9681;';
-  }
-}
-
-// Attach click handler
-document.addEventListener('DOMContentLoaded', function() {
-  var btn = document.getElementById('theme-toggle-btn');
-  if (btn) {
-    btn.addEventListener('click', toggleTheme);
-  }
-});
-
-// Load saved theme immediately
 (function() {
+  // Icons
+  var sunIcon = '\u25D0';  // ◐
+  var moonIcon = '\u25D1'; // ◑
+
+  // Get current theme
+  function getTheme() {
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  }
+
+  // Set theme
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : '');
+    localStorage.setItem('theme', theme);
+    updateIcon();
+  }
+
+  // Update icon
+  function updateIcon() {
+    var icon = document.getElementById('theme-icon');
+    if (icon) {
+      icon.textContent = getTheme() === 'dark' ? moonIcon : sunIcon;
+    }
+  }
+
+  // Toggle theme
+  function toggleTheme() {
+    var newTheme = getTheme() === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  }
+
+  // Load saved theme on page load (before DOM ready)
   var saved = localStorage.getItem('theme');
   if (saved === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
   }
-  // Fix icon after DOM loads
+
+  // Setup when DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
-    var icon = document.getElementById('theme-icon');
-    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    if (icon) {
-      icon.innerHTML = isDark ? '&#9681;' : '&#9680;';
+    // Update icon to match current state
+    updateIcon();
+
+    // Attach click handler
+    var btn = document.getElementById('theme-toggle-btn');
+    if (btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleTheme();
+      });
+    }
+
+    // Masthead scroll effect
+    var masthead = document.querySelector('.masthead');
+    if (masthead) {
+      var ticking = false;
+      function updateMasthead() {
+        if (window.scrollY > 10) {
+          masthead.classList.add('scrolled');
+        } else {
+          masthead.classList.remove('scrolled');
+        }
+        ticking = false;
+      }
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          requestAnimationFrame(updateMasthead);
+          ticking = true;
+        }
+      }, { passive: true });
+      updateMasthead();
     }
   });
 })();
-
-// Masthead scroll effect
-document.addEventListener('DOMContentLoaded', function() {
-  var masthead = document.querySelector('.masthead');
-  if (!masthead) return;
-
-  var ticking = false;
-
-  function updateMasthead() {
-    if (window.scrollY > 10) {
-      masthead.classList.add('scrolled');
-    } else {
-      masthead.classList.remove('scrolled');
-    }
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      requestAnimationFrame(updateMasthead);
-      ticking = true;
-    }
-  }, { passive: true });
-
-  updateMasthead();
-});
 </script>
