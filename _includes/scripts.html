@@ -4,25 +4,113 @@
 
 <!-- Theme Toggle -->
 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-  <span id="theme-icon">◐</span>
+  <span id="theme-icon">&#9680;</span>
 </button>
 
 <script>
-function toggleTheme() {
-  const html = document.documentElement;
-  const isDark = html.getAttribute('data-theme') === 'dark';
-  html.setAttribute('data-theme', isDark ? '' : 'dark');
-  localStorage.setItem('theme', isDark ? '' : 'dark');
-  document.getElementById('theme-icon').textContent = isDark ? '◐' : '◑';
-}
-
-// Load saved theme
 (function() {
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
+  'use strict';
+
+  // ===================================================
+  // Theme Toggle
+  // ===================================================
+  window.toggleTheme = function() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    const newTheme = isDark ? '' : 'dark';
+
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
     const icon = document.getElementById('theme-icon');
-    if (icon) icon.textContent = '◑';
+    if (icon) {
+      // Sun for light mode, moon for dark mode
+      icon.innerHTML = isDark ? '&#9680;' : '&#9681;';
+    }
+  };
+
+  // Load saved theme immediately
+  (function loadTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      const icon = document.getElementById('theme-icon');
+      if (icon) icon.innerHTML = '&#9681;';
+    }
+  })();
+
+  // ===================================================
+  // Masthead Scroll Effect
+  // ===================================================
+  function initMastheadScroll() {
+    const masthead = document.querySelector('.masthead');
+    if (!masthead) return;
+
+    let ticking = false;
+    const scrollThreshold = 10;
+
+    function updateMasthead() {
+      if (window.scrollY > scrollThreshold) {
+        masthead.classList.add('scrolled');
+      } else {
+        masthead.classList.remove('scrolled');
+      }
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(updateMasthead);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Initial check
+    updateMasthead();
+  }
+
+  // ===================================================
+  // Scroll Reveal Animation
+  // ===================================================
+  function initScrollReveal() {
+    // Respect reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    const revealElements = document.querySelectorAll('.reveal');
+    if (!revealElements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    revealElements.forEach(el => observer.observe(el));
+  }
+
+  // ===================================================
+  // Initialize on DOM Ready
+  // ===================================================
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  function init() {
+    initMastheadScroll();
+    initScrollReveal();
   }
 })();
 </script>
