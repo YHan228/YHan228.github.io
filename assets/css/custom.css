@@ -446,25 +446,44 @@ body {
   margin-top: var(--space-2xl);
 }
 
+/* --- Archive & List Containers - OVERRIDE BASE THEME --- */
+.archive {
+  margin-bottom: 2em;
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-right: 0 !important;
+}
+
+.list__item {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 /* --- Archive Items (Vertical stacking) --- */
 .archive__item {
-  display: block;
-  padding: var(--space-md) 0;
-  margin: 0;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--border-subtle);
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: var(--space-md) 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
 }
 
 .archive__item:last-child {
-  border-bottom: none;
+  border-bottom: none !important;
 }
 
 .archive__item-title {
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
   letter-spacing: -0.01em;
-  margin: 0 0 var(--space-xs);
+  margin: 0 0 var(--space-sm) !important;
+  width: 100% !important;
 }
 
 .archive__item-title a {
@@ -478,23 +497,25 @@ body {
 
 /* Style all paragraphs inside archive items */
 .archive__item p {
-  margin: var(--space-xs) 0;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
+  margin: var(--space-xs) 0 !important;
+  font-size: 0.9rem !important;
+  color: var(--text-secondary) !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 .archive__item-excerpt {
-  display: none;
+  display: none !important;
 }
 
 .archive__item-teaser {
-  display: none;
+  display: none !important;
 }
 
 .page__meta {
-  color: var(--text-tertiary);
-  font-size: 0.8125rem;
-  margin: var(--space-xs) 0;
+  color: var(--text-tertiary) !important;
+  font-size: 0.8125rem !important;
+  margin: var(--space-xs) 0 !important;
 }
 
 /* --- Links --- */
@@ -548,17 +569,38 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
   color: var(--text-primary);
   -webkit-appearance: none;
   appearance: none;
+  padding: 0;
 }
 
+/* Sun/Moon icon visibility */
 .theme-toggle .theme-icon {
   pointer-events: none;
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-primary);
+}
+
+.theme-toggle .theme-icon--moon {
+  display: none;
+}
+
+.theme-toggle .theme-icon--sun {
+  display: block;
+}
+
+/* Dark mode: show moon, hide sun */
+html[data-theme="dark"] .theme-toggle .theme-icon--moon {
+  display: block;
+}
+
+html[data-theme="dark"] .theme-toggle .theme-icon--sun {
+  display: none;
 }
 
 .theme-toggle:hover {
