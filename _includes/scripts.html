@@ -2,7 +2,7 @@
 
 {% include analytics.html %}
 
-<!-- Theme Toggle Button -->
+<!-- Theme Toggle Button (Floating) -->
 <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
   <svg class="theme-icon theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="5"></circle>
@@ -22,50 +22,99 @@
 
 <script>
 (function() {
-  // Elements
+  'use strict';
+
   var html = document.documentElement;
   var toggle = document.querySelector('.theme-toggle');
 
-  // Check if dark mode
+  // Determine if dark mode is active
   function isDark() {
     return html.getAttribute('data-theme') === 'dark';
   }
 
-  // Set theme
-  function setTheme(dark) {
+  // Apply theme to DOM and persist to localStorage
+  function applyTheme(dark) {
     if (dark) {
       html.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
     } else {
       html.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
     }
   }
 
-  // Load saved theme on page load
-  var savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    html.setAttribute('data-theme', 'dark');
+  function saveTheme(dark) {
+    try {
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    } catch (e) {
+      // localStorage might be unavailable
+    }
   }
 
-  // Click handler
-  if (toggle) {
-    toggle.onclick = function(e) {
+  // Initialize theme on page load
+  function initTheme() {
+    var saved = null;
+    try {
+      saved = localStorage.getItem('theme');
+    } catch (e) {}
+
+    if (saved === 'dark') {
+      applyTheme(true);
+    } else if (saved === 'light') {
+      applyTheme(false);
+    } else {
+      // No saved preference - check browser preference
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        applyTheme(true);
+      } else {
+        applyTheme(false);
+      }
+    }
+  }
+
+  // Toggle theme
+  function toggleTheme(e) {
+    if (e) {
       e.preventDefault();
-      setTheme(!isDark());
-    };
+      e.stopPropagation();
+    }
+    var newDark = !isDark();
+    applyTheme(newDark);
+    saveTheme(newDark);
+  }
+
+  // Initialize theme immediately
+  initTheme();
+
+  // Set up click handler using addEventListener (more reliable than onclick)
+  if (toggle) {
+    toggle.addEventListener('click', toggleTheme, false);
+    // Also handle touch for mobile
+    toggle.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      toggleTheme();
+    }, { passive: false });
   }
 
   // Masthead scroll effect
   var masthead = document.querySelector('.masthead');
   if (masthead) {
-    window.addEventListener('scroll', function() {
+    var scrollHandler = function() {
       if (window.scrollY > 10) {
         masthead.classList.add('scrolled');
       } else {
         masthead.classList.remove('scrolled');
       }
-    }, { passive: true });
+    };
+    window.addEventListener('scroll', scrollHandler, { passive: true });
+    // Run once on load
+    scrollHandler();
+  }
+
+  // Disable the jQuery theme toggle to prevent conflicts
+  // This runs after jQuery's document.ready
+  if (typeof jQuery !== 'undefined') {
+    jQuery(function() {
+      jQuery('#theme-toggle').off('click');
+    });
   }
 })();
 </script>

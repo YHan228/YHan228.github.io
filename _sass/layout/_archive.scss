@@ -4,15 +4,12 @@
 
 .archive {
   margin-bottom: 2em;
-
-  @include breakpoint($medium) {
-    @include span(12 of 12);
-  }
-
-  @include breakpoint($large) {
-    @include span(10 of 12 last);
-    @include prefix(0.5 of 12);
-  }
+  /* Removed Susy grid constraints - using CSS Grid layout from custom.css */
+  width: 100%;
+  max-width: 100%;
+  float: none;
+  margin-left: 0;
+  margin-right: 0;
 
   a {
     text-decoration: underline;
@@ -90,17 +87,10 @@
    ========================================================================== */
 
 .list__item {
-  @include breakpoint($medium) {
-    padding-right: $right-sidebar-width-narrow;
-  }
-
-  @include breakpoint($large) {
-    padding-right: $right-sidebar-width;
-  }
-
-  @include breakpoint($x-large) {
-    padding-right: $right-sidebar-width-wide;
-  }
+  /* Removed sidebar padding - using CSS Grid layout from custom.css */
+  width: 100%;
+  max-width: 100%;
+  padding-right: 0;
 
   .page__meta {
     margin: 0 0 4px;
