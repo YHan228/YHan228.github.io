@@ -34,35 +34,38 @@
       {% endif %}
     </h2>
 
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-
-    {% if post.collection == 'teaching' %}
-      <span class="archive__item-meta">{% if post.role %}{{ post.role }}. {% endif %}{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
-    {% elsif post.collection == 'publications' %}
+    {% if post.collection == 'publications' %}
+      {%- comment -%} Publications: show authors, venue/year, and optionally abstract/contribution {%- endcomment -%}
+      {% if post.authors %}
+        <p class="archive__item-authors">{{ post.authors }}</p>
+      {% elsif post.excerpt %}
+        <p class="archive__item-authors">{{ post.excerpt | markdownify | strip_html }}</p>
+      {% endif %}
       <span class="archive__item-meta"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
-    {% elsif post.date %}
+      {% if post.abstract %}
+        <p class="archive__item-abstract">{{ post.abstract }}</p>
+      {% endif %}
+      {% if post.contribution %}
+        <p class="archive__item-contribution"><strong>My contribution:</strong> {{ post.contribution }}</p>
+      {% endif %}
+      {% if post.paperurl or post.slidesurl or post.bibtexurl %}
+        <span class="archive__item-links">
+          {% if post.paperurl %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}
+          {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
+          {% if post.bibtexurl %}<a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
+        </span>
+      {% endif %}
+
+    {% elsif post.collection == 'teaching' %}
+      <span class="archive__item-meta">{% if post.role %}{{ post.role }}. {% endif %}{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
+
+    {% else %}
+      {%- comment -%} Blog posts and other content: show date and first sentence {%- endcomment -%}
       <span class="archive__item-meta"><time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></span>
+      {% if post.excerpt %}
+        <p class="archive__item-excerpt">{{ post.excerpt | markdownify | strip_html | truncatewords: 25 }}</p>
+      {% endif %}
     {% endif %}
-
-    <div class="archive__item-details">
-      {% if post.excerpt and site.read_more != 'enabled' %}
-        <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncatewords: 30 }}</p>
-      {% elsif post.excerpt and site.read_more == 'enabled' %}
-        <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncatewords: 30 }} <a href="{{ base_path }}{{ post.url }}" rel="permalink">Read more</a></p>
-      {% endif %}
-
-      {% if post.citation %}
-        <p class="archive__item-citation">{{ post.citation }}</p>
-      {% endif %}
-
-      <span class="archive__item-links">
-        {% if post.paperurl %}<a href="{{ post.paperurl }}">Paper</a>{% endif %}
-        {% if post.slidesurl %}<a href="{{ post.slidesurl }}">Slides</a>{% endif %}
-        {% if post.bibtexurl %}<a href="{{ post.bibtexurl }}">BibTeX</a>{% endif %}
-      </span>
-    </div>
 
   </article>
 </div>

@@ -1,11 +1,10 @@
 ---
 title: "Forthcoming Work"
 collection: publications
-# permalink: /publication/forthcoming-work # Optional
-excerpt: 'Two co‑authorship (statistical advisor) manuscripts and one co‑first‑authorship manuscript planned in 2025.'
-date: 2025-01-01 # Placeholder for ordering
+date: 2025-01-01
 venue: 'In preparation'
 category: 'in_preparation'
----
-
-Details to be added as work progresses. 
+authors: 'Multiple collaborations in progress'
+abstract: 'Two co-authorship (statistical advisor) manuscripts and one co-first-authorship manuscript planned in 2025.'
+contribution: 'Statistical advisor and co-first author roles.'
+--- 

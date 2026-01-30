@@ -2,8 +2,8 @@
 
 {% include analytics.html %}
 
-<!-- Theme Toggle Button (Floating) -->
-<button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+<!-- Theme Toggle Button (Floating) with inline onclick as fallback -->
+<button class="theme-toggle" type="button" aria-label="Toggle dark mode" onclick="window.toggleDarkMode && window.toggleDarkMode()">
   <svg class="theme-icon theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="5"></circle>
     <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -21,35 +21,34 @@
 </button>
 
 <script>
+// Dark mode toggle - defined globally as fallback
 (function() {
   'use strict';
 
   var html = document.documentElement;
-  var toggle = document.querySelector('.theme-toggle');
 
-  // Determine if dark mode is active
   function isDark() {
     return html.getAttribute('data-theme') === 'dark';
   }
 
-  // Apply theme to DOM and persist to localStorage
   function applyTheme(dark) {
     if (dark) {
       html.setAttribute('data-theme', 'dark');
+      document.body.style.backgroundColor = '#0a0a0a';
+      document.body.style.color = '#f5f5f5';
     } else {
       html.removeAttribute('data-theme');
+      document.body.style.backgroundColor = '#ffffff';
+      document.body.style.color = '#171717';
     }
   }
 
   function saveTheme(dark) {
     try {
       localStorage.setItem('theme', dark ? 'dark' : 'light');
-    } catch (e) {
-      // localStorage might be unavailable
-    }
+    } catch (e) {}
   }
 
-  // Initialize theme on page load
   function initTheme() {
     var saved = null;
     try {
@@ -60,41 +59,34 @@
       applyTheme(true);
     } else if (saved === 'light') {
       applyTheme(false);
-    } else {
-      // No saved preference - check browser preference
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        applyTheme(true);
-      } else {
-        applyTheme(false);
-      }
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      applyTheme(true);
     }
   }
 
-  // Toggle theme
-  function toggleTheme(e) {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+  // Global toggle function (for onclick fallback)
+  window.toggleDarkMode = function() {
     var newDark = !isDark();
     applyTheme(newDark);
     saveTheme(newDark);
-  }
+  };
 
-  // Initialize theme immediately
+  // Initialize immediately
   initTheme();
 
-  // Set up click handler using addEventListener (more reliable than onclick)
+  // Also attach via addEventListener when DOM is ready
+  var toggle = document.querySelector('.theme-toggle');
   if (toggle) {
-    toggle.addEventListener('click', toggleTheme, false);
-    // Also handle touch for mobile
-    toggle.addEventListener('touchend', function(e) {
+    toggle.addEventListener('click', function(e) {
       e.preventDefault();
-      toggleTheme();
-    }, { passive: false });
+      e.stopPropagation();
+      window.toggleDarkMode();
+    }, false);
   }
+})();
 
-  // Masthead scroll effect
+// Masthead scroll effect
+(function() {
   var masthead = document.querySelector('.masthead');
   if (masthead) {
     var scrollHandler = function() {
@@ -105,7 +97,6 @@
       }
     };
     window.addEventListener('scroll', scrollHandler, { passive: true });
-    // Run once on load
     scrollHandler();
   }
 })();

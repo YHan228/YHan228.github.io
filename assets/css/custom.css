@@ -404,9 +404,9 @@ body {
 }
 
 .author__urls li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   width: 40px;
   height: 40px;
   border-radius: var(--radius-md);
@@ -416,7 +416,9 @@ body {
   text-decoration: none !important;
   transition: all var(--transition-fast);
   overflow: hidden;
-  position: relative;
+  /* Hide text labels, only icons show */
+  font-size: 0 !important;
+  line-height: 1 !important;
 }
 
 .author__urls li a:hover {
@@ -426,12 +428,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Hide ALL text in social links - only show icons */
-.author__urls li a {
-  font-size: 0 !important;
-  text-indent: -9999px;
-}
-
+/* Icon styling - use flexbox centering from parent */
 .author__urls li a i,
 .author__urls li a .fa,
 .author__urls li a .fab,
@@ -439,11 +436,9 @@ body {
 .author__urls li a .ai,
 .author__urls li a svg {
   font-size: 1.125rem !important;
-  text-indent: 0;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  line-height: 1 !important;
+  width: auto !important;
+  height: auto !important;
 }
 
 /* --- Page Content --- */
@@ -497,15 +492,12 @@ body {
   display: block !important;
 }
 
-/* --- Archive Items (Horizontal slim lines) --- */
+/* --- Archive Items (List layout) --- */
 .archive__item {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: baseline !important;
-  gap: var(--space-sm) !important;
+  display: block !important;
   width: 100% !important;
   max-width: 100% !important;
-  padding: var(--space-md) 0 !important;
+  padding: var(--space-lg) 0 !important;
   margin: 0 !important;
   background: transparent !important;
   border: none !important;
@@ -517,12 +509,11 @@ body {
 }
 
 .archive__item-title {
-  font-size: 1rem !important;
+  font-size: 1.05rem !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em;
-  margin: 0 !important;
-  flex: 1 1 auto !important;
-  min-width: 200px !important;
+  margin: 0 0 var(--space-xs) !important;
+  line-height: 1.4 !important;
 }
 
 .archive__item-title a {
@@ -534,49 +525,67 @@ body {
   text-decoration: underline !important;
 }
 
-/* Meta info (venue, date) on the same line */
-.archive__item-meta {
+/* Author list for publications */
+.archive__item-authors {
   font-size: 0.875rem !important;
   color: var(--text-secondary) !important;
-  white-space: nowrap !important;
-  flex-shrink: 0 !important;
+  margin: 0 0 var(--space-xs) !important;
+  line-height: 1.5 !important;
 }
 
-/* Hidden details section - expandable on click if needed */
-.archive__item-details {
-  display: none !important;
-  width: 100% !important;
-  flex-basis: 100% !important;
-  padding-top: var(--space-sm) !important;
+/* Meta info (venue, date) */
+.archive__item-meta {
+  display: block !important;
+  font-size: 0.8125rem !important;
+  color: var(--text-tertiary) !important;
+  margin-bottom: var(--space-sm) !important;
 }
 
-/* Hide these by default for slim layout */
-.archive__item-excerpt,
-.archive__item-citation,
+/* Abstract for publications */
+.archive__item-abstract {
+  font-size: 0.875rem !important;
+  color: var(--text-secondary) !important;
+  margin: var(--space-sm) 0 !important;
+  line-height: 1.6 !important;
+}
+
+/* Contribution for publications */
+.archive__item-contribution {
+  font-size: 0.875rem !important;
+  color: var(--text-secondary) !important;
+  margin: var(--space-sm) 0 !important;
+  line-height: 1.6 !important;
+}
+
+/* Blog excerpt - first sentence */
+.archive__item-excerpt {
+  font-size: 0.875rem !important;
+  color: var(--text-secondary) !important;
+  margin: var(--space-xs) 0 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* Hide teaser images in list view */
 .archive__item-teaser {
   display: none !important;
 }
 
 /* Links row for papers/slides */
 .archive__item-links {
-  display: none !important;
+  display: inline-flex !important;
   gap: var(--space-md) !important;
   font-size: 0.8125rem !important;
+  margin-top: var(--space-xs) !important;
 }
 
 .archive__item-links a {
-  color: var(--text-secondary) !important;
+  color: var(--accent) !important;
   text-decoration: none !important;
+  padding: 2px 0 !important;
 }
 
 .archive__item-links a:hover {
-  color: var(--text-primary) !important;
   text-decoration: underline !important;
-}
-
-/* Hide old paragraph-based content */
-.archive__item > p {
-  display: none !important;
 }
 
 .page__meta {
