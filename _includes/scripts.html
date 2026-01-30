@@ -3,83 +3,67 @@
 {% include analytics.html %}
 
 <!-- Theme Toggle Button -->
-<button class="theme-toggle" id="theme-toggle-btn" type="button" aria-label="Toggle dark mode">
-  <span id="theme-icon"></span>
+<button class="theme-toggle" aria-label="Toggle dark mode">
+  <span class="theme-icon"></span>
 </button>
 
 <script>
+// Simple dark mode toggle - no dependencies
 (function() {
-  // Icons
-  var sunIcon = '\u25D0';  // ◐
-  var moonIcon = '\u25D1'; // ◑
+  var toggle = document.querySelector('.theme-toggle');
+  var icon = toggle ? toggle.querySelector('.theme-icon') : null;
 
-  // Get current theme
-  function getTheme() {
-    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  function isDark() {
+    return document.documentElement.getAttribute('data-theme') === 'dark';
   }
 
-  // Set theme
-  function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme === 'dark' ? 'dark' : '');
-    localStorage.setItem('theme', theme);
-    updateIcon();
-  }
-
-  // Update icon
   function updateIcon() {
-    var icon = document.getElementById('theme-icon');
     if (icon) {
-      icon.textContent = getTheme() === 'dark' ? moonIcon : sunIcon;
+      icon.textContent = isDark() ? '\u263D' : '\u2600';
     }
   }
 
-  // Toggle theme
-  function toggleTheme() {
-    var newTheme = getTheme() === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
+  function setTheme(dark) {
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : '');
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    updateIcon();
   }
 
-  // Load saved theme on page load (before DOM ready)
-  var saved = localStorage.getItem('theme');
-  if (saved === 'dark') {
+  // Load saved theme immediately
+  if (localStorage.getItem('theme') === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
   }
 
-  // Setup when DOM is ready
-  document.addEventListener('DOMContentLoaded', function() {
-    // Update icon to match current state
-    updateIcon();
+  // Set up click handler directly
+  if (toggle) {
+    toggle.onclick = function(e) {
+      e.preventDefault();
+      setTheme(!isDark());
+    };
+  }
 
-    // Attach click handler
-    var btn = document.getElementById('theme-toggle-btn');
-    if (btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleTheme();
-      });
-    }
+  // Update icon on load
+  updateIcon();
 
-    // Masthead scroll effect
-    var masthead = document.querySelector('.masthead');
-    if (masthead) {
-      var ticking = false;
-      function updateMasthead() {
-        if (window.scrollY > 10) {
-          masthead.classList.add('scrolled');
-        } else {
-          masthead.classList.remove('scrolled');
-        }
-        ticking = false;
+  // Masthead scroll effect
+  var masthead = document.querySelector('.masthead');
+  if (masthead) {
+    var ticking = false;
+    function updateMasthead() {
+      if (window.scrollY > 10) {
+        masthead.classList.add('scrolled');
+      } else {
+        masthead.classList.remove('scrolled');
       }
-      window.addEventListener('scroll', function() {
-        if (!ticking) {
-          requestAnimationFrame(updateMasthead);
-          ticking = true;
-        }
-      }, { passive: true });
-      updateMasthead();
+      ticking = false;
     }
-  });
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(updateMasthead);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateMasthead();
+  }
 })();
 </script>
