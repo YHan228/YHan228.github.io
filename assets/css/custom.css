@@ -1,471 +1,143 @@
-/* Import Noto Sans JP Font */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+/* ===================================================
+   MINIMALIST OVERRIDES
+   Only colors and fonts - keep base layout intact
+   =================================================== */
 
-/* Zen Garden Color Palette */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 :root {
-    --zen-primary: #FDFBF5;      /* Warm white/cream */
-    --zen-secondary: #F0EAD6;     /* Light beige */
-    --zen-accent: #6B8E23;        /* Olive green */
-    --zen-highlight: #DAA520;     /* Golden */
-    --zen-text: #3a3a3a;          /* Dark gray */
-    --zen-text-light: #666666;    /* Medium gray */
+  --text-color: #1a1a1a;
+  --text-muted: #666;
+  --bg-color: #fff;
+  --border-color: #eee;
+  --link-color: #1a1a1a;
 }
 
-/* Global Font and Color Application */
-body, html {
-    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--zen-primary) !important;
-    color: var(--zen-text);
-}
-
-/* Comprehensive Dark Mode Fix */
 html[data-theme="dark"] {
-    --zen-primary: #1a1a1a !important;
-    --zen-secondary: #2a2a2a !important;
-    --zen-accent: #8eb34a !important;
-    --zen-highlight: #f0c420 !important;
-    --zen-text: #e0e0e0 !important;
-    --zen-text-light: #b0b0b0 !important;
+  --text-color: #e5e5e5;
+  --text-muted: #999;
+  --bg-color: #1a1a1a;
+  --border-color: #333;
+  --link-color: #e5e5e5;
 }
 
-html[data-theme="dark"] body,
-html[data-theme="dark"] html {
-    background-color: #1a1a1a !important;
-    color: #e0e0e0 !important;
+/* Font */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
 }
 
-html[data-theme="dark"] .page,
-html[data-theme="dark"] .page__content,
-html[data-theme="dark"] .archive,
-html[data-theme="dark"] .masthead,
-html[data-theme="dark"] .page__hero,
-html[data-theme="dark"] .layout--single,
-html[data-theme="dark"] .layout--archive,
-html[data-theme="dark"] main {
-    background-color: #1a1a1a !important;
-    color: #e0e0e0 !important;
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', -apple-system, sans-serif !important;
+  color: var(--text-color) !important;
 }
 
-html[data-theme="dark"] .intro-section,
-html[data-theme="dark"] .academic-card,
-html[data-theme="dark"] .culture-card,
-html[data-theme="dark"] .archive__item,
-html[data-theme="dark"] .feature__wrapper,
-html[data-theme="dark"] .sidebar,
-html[data-theme="dark"] .author__content,
-html[data-theme="dark"] .quote-section {
-    background-color: #2a2a2a !important;
-    color: #e0e0e0 !important;
+p, li {
+  color: var(--text-muted);
 }
 
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] h4,
-html[data-theme="dark"] h5,
-html[data-theme="dark"] h6,
-html[data-theme="dark"] .page__title,
-html[data-theme="dark"] .archive__subtitle {
-    color: #e0e0e0 !important;
-}
-
-html[data-theme="dark"] p,
-html[data-theme="dark"] li,
-html[data-theme="dark"] .academic-intro,
-html[data-theme="dark"] .culture-hero {
-    color: #b0b0b0 !important;
-}
-
-html[data-theme="dark"] a {
-    color: #8eb34a !important;
-}
-
-html[data-theme="dark"] a:hover {
-    color: #f0c420 !important;
-}
-
-html[data-theme="dark"] .page__footer {
-    background-color: #0a0a0a !important;
-    color: #e0e0e0 !important;
-}
-
-html[data-theme="dark"] .page__footer a {
-    color: #8eb34a !important;
-}
-
-html[data-theme="dark"] .page__footer a:hover {
-    color: #f0c420 !important;
-}
-
-html[data-theme="dark"] .btn {
-    background-color: #8eb34a !important;
-    color: white !important;
-}
-
-html[data-theme="dark"] .btn:hover {
-    background-color: #f0c420 !important;
-}
-
-html[data-theme="dark"] pre,
-html[data-theme="dark"] code {
-    background-color: #2a2a2a !important;
-    color: #e0e0e0 !important;
-    border-color: #8eb34a !important;
-}
-
-/* Hide masthead navigation on standalone sections - aggressive approach */
-body.layout--archive.academic-standalone .masthead,
-body.layout--archive.culture-standalone .masthead,
-.layout--archive.academic-standalone .masthead,
-.layout--archive.culture-standalone .masthead,
-.academic-standalone .masthead,
-.culture-standalone .masthead {
-    display: none !important;
-}
-
-/* More aggressive masthead hiding by URL */
-body[class*="academic"] .masthead,
-body[class*="culture"] .masthead {
-    display: none !important;
-}
-
-/* Hide masthead by checking page content */
-.page__content:has(.floating-controls) ~ * .masthead,
-.page__content .floating-controls ~ .masthead {
-    display: none !important;
-}
-
-/* Alternative: JavaScript-based hiding */
-.hide-masthead .masthead {
-    display: none !important;
-}
-
-/* If floating controls exist, hide masthead */
-body:has(.floating-controls) .masthead {
-    display: none !important;
-}
-
-/* Ensure masthead shows on homepage */
-.homepage-gateway .masthead {
-    display: block !important;
-    visibility: visible !important;
-}
-
-/* Adjust page content when masthead is hidden */
-.academic-standalone .page__content,
-.culture-standalone .page__content {
-    padding-top: 2rem;
-}
-
-/* Center content when sidebar is hidden (culture page) */
-.culture-standalone .page {
-    display: block !important;
-}
-
-.culture-standalone .page__content {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-}
-
-/* Floating night mode toggle for standalone sections */
-.floating-controls {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.floating-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--zen-accent, #6B8E23);
-    color: white;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-}
-
-.floating-btn:hover {
-    background: var(--zen-highlight, #DAA520);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-html[data-theme="dark"] .floating-btn {
-    background: #8eb34a;
-}
-
-html[data-theme="dark"] .floating-btn:hover {
-    background: #f0c420;
-}
-
-/* Dark mode for about section */
-html[data-theme="dark"] .about-section {
-    background-color: #2a2a2a !important;
-}
-
-html[data-theme="dark"] .about-section h3 {
-    color: #8eb34a !important;
-}
-
-html[data-theme="dark"] .about-section p {
-    color: #e0e0e0 !important;
-}
-
-/* Override Academic Pages default colors */
-.page__content {
-    background-color: var(--zen-primary);
-}
-
-.masthead {
-    background-color: var(--zen-primary);
-    border-bottom: 1px solid var(--zen-secondary);
-}
-
-.masthead__menu-item a {
-    color: var(--zen-text);
-}
-
-.masthead__menu-item a:hover {
-    color: var(--zen-accent);
-}
-
-/* Links */
+/* Links - simple underline style */
 a {
-    color: var(--zen-accent);
-    text-decoration: none;
+  color: var(--link-color) !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 a:hover {
-    color: var(--zen-highlight);
-    text-decoration: underline;
+  opacity: 0.6;
 }
 
-/* Headers */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Noto Sans JP', sans-serif;
-    color: var(--zen-text);
-    font-weight: 500;
+/* Navigation links - no underline */
+.greedy-nav a,
+.author__urls a {
+  text-decoration: none;
 }
 
-/* Archive pages */
-.archive {
-    background-color: var(--zen-primary);
+.greedy-nav a:hover,
+.author__urls a:hover {
+  text-decoration: underline;
 }
 
-.archive__item {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease;
+/* Masthead */
+.masthead {
+  background-color: var(--bg-color) !important;
+  border-bottom: 1px solid var(--border-color) !important;
 }
 
-.archive__item:hover {
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-}
-
-/* Sidebar */
+/* Page backgrounds */
+.page,
+.page__content,
+.archive,
 .sidebar {
-    background-color: var(--zen-secondary);
-    border-radius: 8px;
-    padding: 1rem;
-}
-
-.author__avatar img {
-    border: 3px solid var(--zen-accent);
-}
-
-.author__name {
-    color: var(--zen-text);
-    font-weight: 500;
-}
-
-.author__bio {
-    color: var(--zen-text-light);
+  background-color: var(--bg-color) !important;
 }
 
 /* Footer */
 .page__footer {
-    background-color: var(--zen-text);
-    color: var(--zen-primary);
+  background-color: var(--bg-color) !important;
+  border-top: 1px solid var(--border-color) !important;
+  color: var(--text-muted) !important;
 }
 
-.page__footer a {
-    color: var(--zen-secondary);
+/* Author profile */
+.author__name {
+  color: var(--text-color) !important;
 }
 
-.page__footer a:hover {
-    color: var(--zen-highlight);
+.author__bio {
+  color: var(--text-muted) !important;
 }
 
-/* Buttons */
-.btn {
-    background-color: var(--zen-accent);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
+.author__avatar img {
+  filter: grayscale(10%);
 }
 
-.btn:hover {
-    background-color: var(--zen-highlight);
-    color: white;
+/* Archive items */
+.archive__item {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
 }
 
-/* Global vertical-rhythm tweak */
-p               { margin: 0 0 0.6rem; line-height: 1.45; }
-ul li,
-ol li           { margin: 0 0 0.3rem; }
-
-/* Navigation enhancement for balanced sections */
-.greedy-nav {
-    background-color: var(--zen-primary);
+.archive__item:last-child {
+  border-bottom: none;
 }
 
-.greedy-nav a {
-    color: var(--zen-text);
-    font-weight: 400;
-    padding: 0.5rem 1rem;
-    border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
+/* Code blocks */
+pre, code {
+  background-color: var(--border-color) !important;
 }
 
-.greedy-nav a:hover {
-    color: var(--zen-accent);
-    border-bottom-color: var(--zen-accent);
+/* Theme toggle button */
+.theme-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  z-index: 1000;
+  transition: opacity 0.2s;
 }
 
-/* Section headers with Zen aesthetic */
-.page__title {
-    color: var(--zen-text);
-    border-bottom: 2px solid var(--zen-accent);
-    padding-bottom: 0.5rem;
-    margin-bottom: 2rem;
+.theme-toggle:hover {
+  opacity: 0.7;
 }
 
-/* Cards and containers */
-.feature__wrapper {
-    background-color: var(--zen-secondary);
-    border-radius: 12px;
-    padding: 2rem;
-    margin: 2rem 0;
+/* Hide old theme toggle in masthead if exists */
+#theme-toggle {
+  display: none !important;
 }
 
-/* Aggressive fix for clickable card underlines */
-a.academic-card,
-a.culture-card,
-.academic-card,
-.culture-card {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-
-a.academic-card:hover,
-a.culture-card:hover,
-a.academic-card:focus,
-a.culture-card:focus,
-a.academic-card:visited,
-a.culture-card:visited,
-a.academic-card:active,
-a.culture-card:active,
-.academic-card:hover,
-.culture-card:hover,
-.academic-card:focus,
-.culture-card:focus,
-.academic-card:visited,
-.culture-card:visited {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-
-a.academic-card h3,
-a.culture-card h3,
-a.academic-card p,
-a.culture-card p,
-.academic-card h3,
-.culture-card h3,
-.academic-card p,
-.culture-card p,
-a.academic-card span,
-a.culture-card span,
-.academic-card span,
-.culture-card span {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-
-/* Override any Academic Pages underline styles */
-a.academic-card *,
-a.culture-card * {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
-
-/* Code blocks with Zen colors */
-pre {
-    background-color: var(--zen-secondary);
-    border: 1px solid var(--zen-accent);
-    border-radius: 8px;
-}
-
-code {
-    background-color: var(--zen-secondary);
-    color: var(--zen-text);
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-}
-
-/* Tables */
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th {
-    background-color: var(--zen-accent);
-    color: white;
-    padding: 0.75rem;
-    text-align: left;
-}
-
-td {
-    border-bottom: 1px solid var(--zen-secondary);
-    padding: 0.75rem;
-}
-
-tr:hover {
-    background-color: var(--zen-secondary);
-}
-
-/* Forms and inputs */
-input[type="text"],
-input[type="email"],
-textarea {
-    border: 1px solid var(--zen-secondary);
-    background-color: white;
-    padding: 0.5rem;
-    border-radius: 4px;
-    font-family: 'Noto Sans JP', sans-serif;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--zen-accent);
-    box-shadow: 0 0 0 2px rgba(107, 142, 35, 0.2);
+/* Hide floating controls from old design */
+.floating-controls {
+  display: none !important;
 }

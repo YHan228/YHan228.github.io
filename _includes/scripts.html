@@ -1,3 +1,28 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
 {% include analytics.html %}
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+  <span id="theme-icon">◐</span>
+</button>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? '' : 'dark');
+  localStorage.setItem('theme', isDark ? '' : 'dark');
+  document.getElementById('theme-icon').textContent = isDark ? '◐' : '◑';
+}
+
+// Load saved theme
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    const icon = document.getElementById('theme-icon');
+    if (icon) icon.textContent = '◑';
+  }
+})();
+</script>
