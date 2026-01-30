@@ -145,3 +145,20 @@ pre, code {
 .floating-controls {
   display: none !important;
 }
+
+/* ===================================================
+   FIX: Sidebar overlap with main content
+   When sidebar becomes position:fixed at 1024px+,
+   add left margin to page content to prevent overlap
+   =================================================== */
+@media screen and (min-width: 1024px) {
+  #main {
+    margin-left: 17%; /* ~2/12 grid columns */
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #main {
+    margin-left: 260px; /* sidebar max-width (250px) + spacing */
+  }
+}
