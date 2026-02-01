@@ -42,9 +42,6 @@
         <p class="archive__item-authors">{{ post.excerpt | markdownify | strip_html }}</p>
       {% endif %}
       <span class="archive__item-meta"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}{% if post.doi %} · <a href="{{ post.doi }}" class="archive__item-doi">DOI</a>{% endif %}</span>
-      {% if post.abstract %}
-        <p class="archive__item-abstract">{{ post.abstract }}</p>
-      {% endif %}
       {% if post.contribution %}
         <p class="archive__item-contribution"><strong>My contribution:</strong> {{ post.contribution }}</p>
       {% endif %}
