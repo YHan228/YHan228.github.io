@@ -45,6 +45,22 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
+        {% if page.collection == 'publications' %}
+          {% if page.authors %}
+            <p class="publication__authors"><strong>Authors:</strong> {{ page.authors }}</p>
+          {% endif %}
+          {% if page.doi %}
+            <p class="publication__doi"><strong>DOI:</strong> <a href="{{ page.doi }}">{{ page.doi }}</a></p>
+          {% endif %}
+          {% if page.abstract %}
+            <h2>Abstract</h2>
+            <p class="publication__abstract">{{ page.abstract }}</p>
+          {% endif %}
+          {% if page.contribution %}
+            <p class="publication__contribution"><strong>My contribution:</strong> {{ page.contribution }}</p>
+          {% endif %}
+        {% endif %}
+
         {{ content }}
 
         {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}

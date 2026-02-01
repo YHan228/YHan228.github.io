@@ -1,0 +1,11 @@
+---
+title: "Selective Effects of Eye Movement Desensitization and Reprocessing, Imagery Rescripting and Imaginal Exposure on Voluntary and Involuntary Memory of an Aversive Autobiographical Event"
+collection: publications
+date: 2025-05-13
+venue: '(R&R) Journal of Experimental Psychology: Applied; OSF'
+category: 'in_review'
+authors: 'Aleksic M., Ehring T., Kunze A., <b>Han Y.</b>, Funk H., Wolkenstein L.*'
+abstract: 'Clinical theories suggest that trauma-focused interventions reduce intrusive memories while preserving voluntary recall. However, concerns persist that they may inadvertently compromise factual memory content. To test these contrasting predictions, we examined the effects of Eye Movement Desensitization and Reprocessing (EMDR), Imagery Rescripting (ImRs), Imaginal Exposure (IE), on involuntary and voluntary memories of an aversive autobiographical event. Healthy participants (N = 182), recruited between 2021 and 2023, completed a free recall task before receiving either one of the interventions or no intervention (NIC). One week later, the recall task was repeated. Intrusion load and frequency were assessed with an app-diary; psychophysiological responses to intrusions were assessed in a laboratory task. Independent raters evaluated disorganization, coherence, consistency of voluntary memory. All interventions reduced intrusion load, but only ImRs decreased intrusion frequency compared to NIC. Psychophysiological responses to intrusions showed no group differences. IE improved the structural organization of voluntary memory by reducing disorganized thoughts, while EMDR and ImRs enhanced conceptual organization by increasing contextual coherence. None of the interventions impaired memory consistency, with no group differences in contradictions or omissions. These findings suggest that these interventions reduce distressing intrusions without compromising voluntary memory. Further research should replicate these effects in clinical samples.'
+doi: https://doi.org/10.31219/osf.io/9hmdb_v2
+contribution: 'Statistical consultant.'
+--- 
