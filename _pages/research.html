@@ -1,0 +1,41 @@
+---
+layout: archive
+title: "Research"
+permalink: /research/
+author_profile: false
+---
+
+{% include base_path %}
+
+<h2>Main Project</h2><hr />
+
+<div class="list__item">
+  <article class="archive__item">
+    <h2 class="archive__item-title">
+      Robustness-Driven Feature Attribution in Genomic Deep Learning with Integrated Gradients
+    </h2>
+    <p class="archive__item-authors"><b>Han Y.</b></p>
+    <span class="archive__item-meta"><i>B.Sc. Thesis</i>, LMU Munich, 2026 · Grade: 1.0</span>
+    <p class="archive__item-contribution"><strong>Supervisors:</strong> Prof. Dr. Bernd Bischl, Martin Binder</p>
+
+    <details class="archive__item-abstract">
+      <summary><strong>Abstract</strong></summary>
+      <p style="margin-top: 0.5em; padding-left: 1em; border-left: 3px solid var(--border-subtle, #e0e0e0);">
+        When do robust models yield better explanations? This thesis investigates adversarial training as an interpretability intervention for sequence-based CNNs. We find the answer is context-dependent: on data with compositional shortcuts, adversarial training suppresses confounders and recovers true signal; without such confounders, boundary-aware attribution provides the main benefit. On complex real-world data, predictive multiplicity (many equally accurate but differently structured models) limits attribution quality regardless of robustness. We propose lightweight diagnostics to identify which regime applies before investing in expensive adversarial training.
+      </p>
+    </details>
+
+    <p style="margin-top: 0.8em;">
+      <a href="/files/thesis_abstract.pdf" class="btn btn--small">Abstract (PDF)</a>
+      <a href="/files/thesis_defense_slides.pdf" class="btn btn--small">Defense Slides</a>
+      <a href="https://github.com/YHan228/GenomeInterpretation" class="btn btn--small">GitHub Repository</a>
+    </p>
+  </article>
+</div>
+
+<h2 style="margin-top: 2em;">Co-authored Publications</h2><hr />
+<p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5em;">Preprints and submissions from collaborative research projects.</p>
+
+{% for post in site.publications reversed %}
+  {% include archive-single.html %}
+{% endfor %}

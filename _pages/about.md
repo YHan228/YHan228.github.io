@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I’m a Master’s student at LMU Munich, studying Statistics and Data Science (Machine Learning track). I also work as a research assistant at the [Statistical Consulting Lab (StaBLab)](https://www.stablab.stat.uni-muenchen.de/) and in the [BIFO group](https://www.helmholtz-hzi.de/en/research/research-groups/details/computational-biology-for-infection-research/) at the [Helmholtz Centre for Infection Research](https://www.helmholtz-hzi.de/).
+I’m a Master’s student at LMU Munich, studying Statistics and Data Science (Machine Learning track). I also work as a research assistant at the [Statistical Consulting Unit (StaBLab)](https://www.stablab.stat.uni-muenchen.de/) and in the [BIFO group](https://www.helmholtz-hzi.de/en/research/research-groups/details/computational-biology-for-infection-research/) at the [Helmholtz Centre for Infection Research](https://www.helmholtz-hzi.de/).
 
 My research focuses on **interpretable machine learning** for genome sequence modeling. I’m involved in the [GenomeNet](https://github.com/GenomeNet) project, where we develop deep learning methods to uncover meaningful patterns in genomic data.
 

@@ -547,6 +547,32 @@ body {
   text-decoration: underline !important;
 }
 
+/* Abstract expandable section */
+details.archive__item-abstract {
+  margin-top: 0.8em;
+}
+
+details.archive__item-abstract summary {
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+details.archive__item-abstract summary:hover {
+  color: var(--text-primary);
+}
+
+details.archive__item-abstract[open] summary {
+  margin-bottom: 0.5em;
+}
+
+/* Small button style */
+.btn--small {
+  font-size: 0.8rem !important;
+  padding: 0.3em 0.8em !important;
+  margin-right: 0.5em;
+}
+
 .page__meta {
   color: var(--text-tertiary) !important;
   font-size: 0.8125rem !important;
