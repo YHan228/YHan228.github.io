@@ -22,7 +22,7 @@ repository               : "YHan228/YHan228.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpeg"
   name             : "Yichen Han"
   pronouns         : # example: "she/her"  
   bio              : "Statistics and Data Science @ LMU Munich; RA @ HZI & StaBLab"
