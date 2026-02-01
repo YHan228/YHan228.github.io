@@ -35,13 +35,13 @@
     </h2>
 
     {% if post.collection == 'publications' %}
-      {%- comment -%} Publications: show authors, venue/year, and optionally abstract/contribution {%- endcomment -%}
+      {%- comment -%} Publications: show authors, venue/year, DOI, abstract, contribution {%- endcomment -%}
       {% if post.authors %}
         <p class="archive__item-authors">{{ post.authors }}</p>
       {% elsif post.excerpt %}
         <p class="archive__item-authors">{{ post.excerpt | markdownify | strip_html }}</p>
       {% endif %}
-      <span class="archive__item-meta"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
+      <span class="archive__item-meta"><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}{% if post.doi %} · <a href="{{ post.doi }}" class="archive__item-doi">DOI</a>{% endif %}</span>
       {% if post.abstract %}
         <p class="archive__item-abstract">{{ post.abstract }}</p>
       {% endif %}

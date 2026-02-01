@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-I'm a Statistics and Data Science student at LMU Munich, working as a research assistant at the [Statistical Consulting Lab (StaBLab)](https://www.stablab.stat.uni-muenchen.de/) and the [Helmholtz Centre for Infection Research](https://www.helmholtz-hzi.de/).
+I’m a Master’s student at LMU Munich, studying Statistics and Data Science (Machine Learning track). I also work as a research assistant at the [Statistical Consulting Lab (StaBLab)](https://www.stablab.stat.uni-muenchen.de/) and in the [BIFO group](https://www.helmholtz-hzi.de/en/research/research-groups/details/computational-biology-for-infection-research/) at the [Helmholtz Centre for Infection Research](https://www.helmholtz-hzi.de/).
 
-My research focuses on **interpretable machine learning** for computational biology, particularly through the [GenomeNet](https://genomenet.github.io/) project—developing deep learning methods that reveal meaningful patterns in genomic data.
+My research focuses on **interpretable machine learning** for genome sequence modeling. I’m involved in the [GenomeNet](https://github.com/GenomeNet) project, where we develop deep learning methods to uncover meaningful patterns in genomic data.
 
 ## Research Interests
 
@@ -19,4 +19,4 @@ My research focuses on **interpretable machine learning** for computational biol
 
 ## Recent Work
 
-Currently working on methods to improve the interpretability of neural networks applied to DNA sequence analysis, with applications in microbial classification and genomic pattern discovery.
+I’m currently studying the link between adversarial robustness and interpretability, and exploring the Rashomon effect and ground-truth quality in bacterial whole-genome data. Side projects include CRISPR array modeling, handling missingness in phenotype ground truth, and the potential of LLMs in biological data.

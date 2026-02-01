@@ -69,49 +69,9 @@
   --radius-full: 9999px;
 }
 
-/* Dark Mode Tokens */
-html[data-theme="dark"] {
-  /* Custom design system variables */
-  --bg-primary: var(--gray-950);
-  --bg-secondary: var(--gray-900);
-  --bg-tertiary: var(--gray-800);
-  --text-primary: var(--gray-100);
-  --text-secondary: var(--gray-400);
-  --text-tertiary: var(--gray-500);
-  --border-default: var(--gray-800);
-  --border-subtle: var(--gray-900);
-
-  --glass-bg: rgba(10, 10, 10, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-
-  --accent: var(--gray-100);
-  --accent-hover: var(--gray-300);
-
-  /* CRITICAL: Override the SCSS theme's --global-* variables too!
-     main.css uses these variables, so we must set them for complete dark mode */
-  --global-bg-color: var(--gray-950);
-  --global-text-color: var(--gray-100);
-  --global-text-color-light: var(--gray-400);
-  --global-border-color: var(--gray-800);
-  --global-dark-border-color: var(--gray-700);
-  --global-link-color: #6db3f2;
-  --global-link-color-hover: #9dcbf7;
-  --global-link-color-visited: #a8c8e8;
-  --global-masthead-link-color: var(--gray-100);
-  --global-masthead-link-color-hover: var(--gray-300);
-  --global-footer-bg-color: var(--gray-950);
-  --global-code-background-color: var(--gray-900);
-  --global-code-text-color: var(--gray-200);
-}
-
 /* ===================================================
    PHASE 3: TYPOGRAPHY SYSTEM
    =================================================== */
-
-html {
-  background-color: var(--bg-primary) !important;
-}
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
@@ -576,6 +536,17 @@ body {
   text-decoration: underline !important;
 }
 
+/* DOI link styling */
+.archive__item-doi {
+  color: var(--accent) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.archive__item-doi:hover {
+  text-decoration: underline !important;
+}
+
 .page__meta {
   color: var(--text-tertiary) !important;
   font-size: 0.8125rem !important;
@@ -622,76 +593,6 @@ a:hover {
 .page__content a:not(.btn):hover {
   background-size: 100% 100%;
   color: var(--bg-primary) !important;
-}
-
-/* --- Theme Toggle: Floating Pill --- */
-.theme-toggle {
-  position: fixed;
-  bottom: var(--space-xl);
-  right: var(--space-xl);
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-full);
-  background: var(--bg-primary);
-  border: 1px solid var(--border-default);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
-  color: var(--text-primary);
-  -webkit-appearance: none;
-  appearance: none;
-  padding: 0;
-}
-
-/* Sun/Moon icon visibility */
-.theme-toggle .theme-icon {
-  pointer-events: none;
-  width: 20px;
-  height: 20px;
-  stroke: var(--text-primary);
-}
-
-.theme-toggle .theme-icon--moon {
-  display: none;
-}
-
-.theme-toggle .theme-icon--sun {
-  display: block;
-}
-
-/* Dark mode: show moon, hide sun */
-html[data-theme="dark"] .theme-toggle .theme-icon--moon {
-  display: block;
-}
-
-html[data-theme="dark"] .theme-toggle .theme-icon--sun {
-  display: none;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
-}
-
-.theme-toggle:active {
-  transform: scale(0.95);
-}
-
-html[data-theme="dark"] .theme-toggle {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Hide old toggle */
-#theme-toggle {
-  display: none !important;
-}
-
-.floating-controls {
-  display: none !important;
 }
 
 /* --- Footer --- */
@@ -908,14 +809,6 @@ div.highlighter-rouge {
     padding: var(--space-sm);
     font-size: 0.8125rem;
   }
-
-  /* Theme toggle */
-  .theme-toggle {
-    bottom: var(--space-lg);
-    right: var(--space-lg);
-    width: 44px;
-    height: 44px;
-  }
 }
 
 /* Extra small screens */
@@ -961,8 +854,7 @@ div.highlighter-rouge {
 
 /* Focus states */
 a:focus-visible,
-button:focus-visible,
-.theme-toggle:focus-visible {
+button:focus-visible {
   outline: 2px solid var(--text-primary);
   outline-offset: 2px;
 }
@@ -984,11 +876,6 @@ button:focus-visible,
   top: var(--space-md);
 }
 
-/* Ensure sufficient color contrast */
-html[data-theme="dark"] .page__content a:not(.btn):hover {
-  color: var(--gray-950) !important;
-}
-
 /* Selection */
 ::selection {
   background: var(--text-primary);
@@ -1001,7 +888,6 @@ html[data-theme="dark"] .page__content a:not(.btn):hover {
 
 @media print {
   .masthead,
-  .theme-toggle,
   .author__urls {
     display: none !important;
   }

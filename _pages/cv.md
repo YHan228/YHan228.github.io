@@ -17,33 +17,44 @@ redirect_from:
   </a>
 </div>
 
-## Education  
-**B.Sc. Statistics & Data Science** — Ludwig-Maximilians-Universität München  
-*Oct 2022 – Sep 2025 (expected)*  
-Minor Biology (30 ECTS) • Thesis: *Interpretable Sequence-based Deep Learning Models for Biomarker Discovery in Genomics*
+## Education
+**M.Sc. Statistics & Data Science** — Ludwig-Maximilians-Universität München  
+*Oct 2025 – Sep 2027 (expected)*
+Machine Learning track
 
-## Research experience  
-**Research Assistant** — Computational Biology for Infection Research, HZI Braunschweig  
+**B.Sc. Statistics & Data Science** — Ludwig-Maximilians-Universität München  
+*Oct 2022 – Jan 2026*  \\
+Minor Biology (30 ECTS) \\
+Thesis: *Robustness-Driven Feature Attribution in Genomic Deep Learning with Integrated Gradients*
+
+## Research Experience
+**Research Assistant** — Computational Biology for Infection Research (BIFO), Helmholtz Centre for Infection Research (HZI), Braunschweig  
 *Oct 2024 – present*  
 
-**Research Assistant & Statistical Consultant** — StaBLab, LMU Munich  
+**Research Assistant & Statistical Consultant** — Statistical Consulting Unit (StaBLab), LMU Munich
 *Apr 2024 – present*
 
-## Teaching experience  
+## Teaching Experience
 **Teaching Assistant** — Department of Statistics, LMU Munich  
-*Oct 2023 – Oct 2024*  
-- *Descriptive Statistics & Exploratory Data Analysis* (WiSe 23/24): tutorials, grading  
-- *Probability Theory & Statistics for Computer Science* (SoSe 24): grading, technical support  
-- *Descriptive Statistics & Probability Theory* (SoSe 24): exam-prep tutor  
+*Oct 2023 – Mar 2026*  
+- *Descriptive Statistics & Exploratory Data Analysis* (WT 2023/24): tutorials, grading
+- *Probability Theory & Statistics for Computer Science* (ST 2024): grading, technical support  
+- *Descriptive Statistics & Probability Theory* (ST 2024): exam-prep tutor  
+- *Advanced Statistical Practicum* (WT 2025/26): supervised and graded two projects (8 total)
 
-## Skills  
+## Skills
 **Programming:** R (advanced) · Python (intermediate) · SAS (intermediate)  
 **Tools:** Git · SLURM · Linux · LaTeX · Inkscape  
-**Languages:** Chinese (native) · German (fluent) · English (fluent) · Norwegian (beginner)
+**Languages:** Chinese (native) · German (fluent) · English (fluent)
 
-## Service & leadership  
-**Student representative**, W2 professorship appointment commissions, Department of Statistics, LMU Munich 
+## Service & leadership
+
+**Elected Member, Faculty Convention (`Fakultätskonvent`)** — Faculty of Informatics, Mathematics and Statistics, LMU Munich  
+*Term 2025–2026*
+
+**Student Representative**, W2 professorship appointment committees, Department of Statistics, LMU Munich  
 *Mar 2025 – present*  
 
-**Statistics Student Council, LMU Munich** — Lead, Teaching Working Group; site administrator  
+**Student council Statistics & Data Science, LMU Munich** — Elected Member (*term 2025–2026*)
 *Apr 2023 – present*
+Lead, Teaching Working Group
