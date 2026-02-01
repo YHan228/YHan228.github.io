@@ -595,6 +595,63 @@ a:hover {
   color: var(--bg-primary) !important;
 }
 
+/* --- Related Posts ("You May Also Enjoy") --- */
+.page__related {
+  clear: both !important;
+  float: none !important;
+  width: 100% !important;
+  margin-top: var(--space-2xl) !important;
+  padding-top: var(--space-xl) !important;
+  border-top: 1px solid var(--border-default) !important;
+}
+
+.page__related-title {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--text-tertiary) !important;
+  margin-bottom: var(--space-lg) !important;
+}
+
+.page__related .grid__wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+  gap: var(--space-lg) !important;
+}
+
+.page__related .grid__item {
+  width: 100% !important;
+  float: none !important;
+  margin: 0 !important;
+}
+
+.page__related .archive__item {
+  display: block !important;
+  padding: var(--space-md) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: var(--radius-md) !important;
+  background: var(--bg-secondary) !important;
+  height: 100% !important;
+}
+
+.page__related .archive__item-title {
+  font-size: 0.9375rem !important;
+  margin-bottom: var(--space-xs) !important;
+}
+
+.page__related .archive__item-excerpt {
+  display: block !important;
+  font-size: 0.8125rem !important;
+  color: var(--text-secondary) !important;
+  line-height: 1.5 !important;
+  margin-top: var(--space-xs) !important;
+}
+
+.page__related .archive__item-meta {
+  font-size: 0.75rem !important;
+}
+
 /* --- Footer --- */
 .page__footer {
   background-color: var(--bg-primary) !important;
