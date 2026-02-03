@@ -28,8 +28,11 @@ Minor Biology (30 ECTS)<br>
 Thesis: *Robustness-Driven Feature Attribution in Genomic Deep Learning with Integrated Gradients*
 
 ## Research Experience
-**Research Assistant** — Computational Biology for Infection Research (BIFO), Helmholtz Centre for Infection Research (HZI), Braunschweig<br>
-*Oct 2024 – present*
+**Collaborating Student Researcher** — The Huttenhower Lab, Harvard T.H. Chan School of Public Health<br>
+*Jan 2025 – present* (remote)
+
+**Research Assistant** — BIFO Group, Helmholtz Centre for Infection Research<br>
+*Oct 2024 – present* (remote)
 
 **Research Assistant & Statistical Consultant** — Statistical Consulting Unit (StaBLab), LMU Munich<br>
 *Apr 2024 – present*
@@ -43,9 +46,9 @@ Thesis: *Robustness-Driven Feature Attribution in Genomic Deep Learning with Int
 - *Advanced Statistical Practicum* (WT 2025/26): supervised and graded two projects (8 total)
 
 ## Skills
-**Programming:** R (advanced) · Python (intermediate) · SAS (intermediate)<br>
-**Tools:** Git · SLURM · Linux · LaTeX · Inkscape<br>
-**Languages:** Chinese (native) · German (fluent) · English (fluent)
+**Programming:** R · Python · SAS · Bash<br>
+**Tools:** SLURM · PyTorch · TensorFlow · Snakemake · Docker · SQL · Git · Linux · LaTeX · Inkscape<br>
+**Languages:** Chinese (native) · German (C1) · English (IELTS 8.0)
 
 ## Service & Leadership
 

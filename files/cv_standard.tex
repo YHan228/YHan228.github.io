@@ -8,10 +8,15 @@
 % Packages
 % ------------------------------------------------
 \usepackage{fontspec}
-\setmainfont{Source Sans 3}[
-  ItalicFont = SourceSans3-It,
-  BoldItalicFont = SourceSans3-BoldIt,
-]
+% Standard academic fonts
+\setmainfont{Latin Modern Roman}
+% Old Inter config:
+% \setmainfont{Inter}[
+% UprightFont = *-Regular,
+% BoldFont = *-SemiBold,
+% ItalicFont = *-Italic,
+% BoldItalicFont = *-SemiBoldItalic,
+% ]
 
 \usepackage{geometry}
   \geometry{a4paper, margin=0.75in}
@@ -100,8 +105,6 @@ Minor in Biology (30 ECTS)
 \textbf{Thesis} (Grade: 1.0): \emph{Robustness-Driven Feature Attribution in Genomic Deep Learning with Integrated Gradients}
 
 Investigated when adversarial robustness improves interpretation plausibility in genomic CNNs. Supervised by Bernd Bischl and Martin Binder.
-
-{\small \href{https://yhan228.github.io/files/thesis_abstract.pdf}{Abstract} · \href{https://yhan228.github.io/files/thesis_defense_slides.pdf}{Slides} · \href{https://github.com/YHan228/GenomeInterpretation}{GitHub}}
 \end{details}
 
 % ------------------------------------------------
@@ -132,78 +135,80 @@ Lin L., Hatzikotoulas K., \ldots, Wiegrebe S., \textbf{Han Y.}, Ivanova O., \ldo
 \section*{Research Experience}
 
 \entry{\href{https://huttenhower.sph.harvard.edu/people/}{The Huttenhower Lab}, Harvard T.H. Chan School of Public Health}{Jan 2025 -- present}
-      {Collaborating Student Researcher (joint with Philipp Münch)}{Boston, MA, USA (remote)}
-\begin{itemize}[leftmargin=1.5em, itemsep=0pt, parsep=0.1em, topsep=0.1em]
-\item Advised by Curtis Huttenhower. Developing interpretable genomic deep learning models
-\end{itemize}
+      {Collaborating Student Researcher (external, remote)}{Boston, MA, USA}
+\begin{details}
+Advised by Curtis Huttenhower. Joint with Philipp Münch. Collaborating on developing interpretable genomic deep learning models.
+
+Contributed statistical analysis and ensemble learning methods to \href{https://doi.org/10.1101/2025.11.24.690272}{Münch et al.\ (2025)}.
+\end{details}
 
 \entry{\href{https://www.helmholtz-hzi.de/en/research/research-groups/details/computational-biology-for-infection-research/}{BIFO Group}, Helmholtz Centre for Infection Research}{Oct 2024 -- present}
-      {Research Assistant}{Braunschweig, Germany (remote)}
-\begin{itemize}[leftmargin=1.5em, itemsep=0pt, parsep=0.1em, topsep=0.1em]
-\item Member of \href{https://github.com/GenomeNet}{GenomeNet} project (PI: Alice McHardy; Team lead: Philipp Münch)
-\item Developed adversarial training pipelines for genomic CNNs (PyTorch)
-\item Implemented Integrated Gradients for genomic models (Python, R)
-\item Developed statistical tools for Rashomon effect evaluation
-\item Developed synthetic genome datasets for interpretation benchmarking
-\end{itemize}
+      {Research Assistant}{Braunschweig, Germany}
+\begin{details}
+Member of the \href{https://github.com/GenomeNet}{GenomeNet} project (PI: Alice McHardy; Team lead: Philipp Münch).
+
+Developed adversarial training pipelines for genomic CNNs (PyTorch).
+Implemented Integrated Gradients for genomic models (Python, R).
+Built statistical tools for Rashomon effect evaluation and synthetic genome datasets for interpretation benchmarking.
+\end{details}
 
 \entry{\href{https://www.stat.lmu.de/stablab/de/}{Statistical Consulting Unit (StaBLab)}, LMU Munich}{Apr 2024 -- present}
       {Research Assistant \& Statistical Consultant}{Munich, Germany} 
-\begin{itemize}[leftmargin=1.5em, itemsep=0pt, parsep=0.1em, topsep=0.1em]
-\item Methodological support to 30+ graduate projects (MSc/PhD) in biology, medicine, psychology, and archaeology
-\item Co-authored: Lin et al.\ (2026), \href{https://doi.org/10.31219/osf.io/9hmdb_v2}{Aleksic et al.\ (2025)}
-\item Contributing to BfS-funded Wismut project: Bayesian hierarchical modeling of exposure uncertainties in radiation risk assessment; HPC pipeline development
-\end{itemize}
+\begin{details}
+Provided methodological support to 30+ graduate projects (MSc \& PhD) in biology, medicine, psychology, and archaeology. Co-authored publications: Lin et al.\ (2026) and \href{https://doi.org/10.31219/osf.io/9hmdb_v2}{Aleksic et al.\ (2025)}.
+
+Also contributing to BfS-funded Wismut project: Bayesian hierarchical modeling of exposure uncertainties in radiation risk assessment; HPC pipeline development.
+\end{details}
 
 % ------------------------------------------------
 \section*{Teaching Experience (selected)}
 
 \entry{Teaching Assistant}{Oct 2023 -- Mar 2026}
       {Department of Statistics}{LMU Munich}
-\begin{itemize}[leftmargin=1.5em, itemsep=0pt, parsep=0.1em, topsep=0.1em]
-\item \textbf{Tutorial Instructor} -- Descriptive Statistics \& EDA (Winter 2023/24): weekly tutorials for $\sim$120 students; designed exercises
-\item \textbf{Project Supervisor} -- Advanced Statistical Practicum (Winter 2025/26): supervised 2 student projects (Greek tomb kinship modeling; stroke metabolomics)
-\item \textbf{Curriculum Developer} -- Descriptive Statistics \& Probability Theory (Summer 2024): primary author of exam-prep materials; workshops for $\sim$200 students
-\end{itemize}
+\begin{details}
+\textbf{Tutorial Instructor} -- Descriptive Statistics \& EDA (Winter 2023/24): weekly tutorials for $\sim$120 students; designed exercises.
+
+\textbf{Project Supervisor} -- Advanced Statistical Practicum (Winter 2025/26): supervised 2 student projects (Greek tomb kinship modeling; stroke metabolomics).
+
+\textbf{Curriculum Developer} -- Descriptive Statistics \& Probability Theory (Summer 2024): primary author of exam-prep materials; weekly workshops for $\sim$200 students.
+\end{details}
 % ------------------------------------------------
 \section*{Service \& Leadership}
 
 \entry{Elected Member, Faculty Council (\textit{Fakultätskonvent})}{Jul 2025 -- Jul 2026}
       {Faculty of Mathematics, Informatics and Statistics}{LMU Munich}
-\begin{itemize}[leftmargin=1.5em, itemsep=0pt, parsep=0.1em, topsep=0.1em]
-\item Participated in faculty-wide decision-making, representing student interests for the Department of Statistics
-\end{itemize}
+\begin{details}
+Participated in faculty-wide decision-making, representing student interests for the Department of Statistics.
+\end{details}
 \entry{Student Representative}{Mar 2025 -- present}
       {two W2 Professorship Appointment Committees}{Department of Statistics, LMU Munich}
 
 \entry{Student Council Statistics \& Data Science}{Apr 2023 -- present}
       {Elected Member (Jul 2025 -- Jul 2026); Lead, Teaching Working Group}{LMU Munich}
-\begin{itemize}[leftmargin=1.5em, itemsep=0pt, parsep=0.1em, topsep=0.1em]
-\item Organizing regular Round Table for Teaching events with faculty and students, fostering transparent communication and feedback
-\end{itemize}
+\begin{details}
+Organizing regular Round Table for Teaching events with faculty and students, fostering transparent communication and feedback.
+\end{details}
 
 \section*{Other Projects (selected)}
 
 \entry{Wildlife abundance modeling}{Feb 2025 -- May 2025}
       {Advanced Statistical Practicum, Grade: 1.0}{LMU Munich}
-\begin{itemize}[leftmargin=1.5em, itemsep=0pt, parsep=0.1em, topsep=0.1em]
-\item Evaluated N-Mixture models for estimating wildlife abundance from repeated camera-trap data across ten German national parks (collaboration with Nationalparkverwaltung Bayerischer Wald)
-\item Wrote a review on N-Mixture model applications and theoretical gaps
-\end{itemize}
+\begin{details}
+Evaluated N-Mixture models for estimating wildlife abundance from repeated camera-trap data across ten German national parks (collaboration with Nationalparkverwaltung Bayerischer Wald). Wrote a review on N-Mixture model applications and theoretical gaps.
+\end{details}
 
 \entry{The Misspecification Bias in TSLS with Covariates}{Oct 2024 -- Mar 2025}
       {Causal Inference Seminar (Master's level), Grade: 1.0}{LMU Munich}
-\begin{itemize}[leftmargin=1.5em, itemsep=0pt, parsep=0.1em, topsep=0.1em]
-\item Investigated conditions under which TSLS with covariates yields valid causal interpretations, synthesizing recent results on ``rich covariates'' for positively weighted treatment effects
-\item Demonstrated misspecification bias through simulations; surveyed uptake in subsequent literature
-\end{itemize}
+\begin{details}
+Investigated conditions under which TSLS with covariates yields valid causal interpretations, synthesizing recent results on ``rich covariates'' for positively weighted treatment effects. Demonstrated misspecification bias through simulations and surveyed uptake in subsequent literature.
+\end{details}
 % ------------------------------------------------
 \section*{Skills}
 
 \renewcommand{\arraystretch}{1.3}
 \begin{tabularx}{\linewidth}{@{} l X @{}}
-\textbf{Programming} & R \enspace·\enspace Python \enspace·\enspace SAS \enspace·\enspace Bash \\
-\textbf{Tools} & SLURM, PyTorch, TensorFlow, Snakemake, Docker, SQL, Git, Linux, \LaTeX, Inkscape\\
+\textbf{Programming} & R \enspace·\enspace Python \enspace·\enspace SAS \\
+\textbf{Tools} & Git, SLURM, Linux, PyTorch, TensorFlow, \LaTeX, Inkscape\\
 \textbf{Languages} & Chinese (native), German (C1), English (IELTS 8.0)
 \end{tabularx}
 \renewcommand{\arraystretch}{1.0}
