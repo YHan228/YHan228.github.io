@@ -7,15 +7,15 @@ redirect_from:
   - /about.html
 ---
 
-I’m a Master’s student at LMU Munich, studying Statistics and Data Science (Machine Learning track). I also work as a research assistant at the [Statistical Consulting Unit (StaBLab)](https://www.stablab.stat.uni-muenchen.de/) and in the [BIFO group](https://www.helmholtz-hzi.de/en/research/research-groups/details/computational-biology-for-infection-research/) at the [Helmholtz Centre for Infection Research](https://www.helmholtz-hzi.de/).
+I'm a Master's student in Statistics and Data Science (Machine Learning track) at LMU Munich. My research focuses on **interpretable machine learning for genomics**—understanding what neural networks learn from DNA sequences and when we can trust their explanations.
 
-My research focuses on **interpretable machine learning** for genome sequence modeling. I’m involved in the [GenomeNet](https://github.com/GenomeNet) project, where we develop deep learning methods to uncover meaningful patterns in genomic data.
+I work on the [GenomeNet](https://github.com/GenomeNet) project at the [Helmholtz Centre for Infection Research](https://www.helmholtz-hzi.de/) and collaborate with the [Huttenhower Lab](https://huttenhower.sph.harvard.edu/) at Harvard. I'm also a statistical consultant at [StaBLab](https://www.stablab.stat.uni-muenchen.de/), LMU Munich.
 
 ## Research Interests
 
-- Interpretable deep learning for genomics
-- Statistical methods for reproducible science
-- Computational biology and bioinformatics
+- Interpretable machine learning for genomics
+- Statistical learning for omics data
+- Causal inference
 
 ## Recent Work
 

@@ -40,10 +40,9 @@ Thesis: *Robustness-Driven Feature Attribution in Genomic Deep Learning with Int
 ## Teaching Experience
 **Teaching Assistant** — Department of Statistics, LMU Munich<br>
 *Oct 2023 – Mar 2026*
-- *Descriptive Statistics & Exploratory Data Analysis* (WT 2023/24): tutorials, grading
-- *Probability Theory & Statistics for Computer Science* (ST 2024): grading, technical support
-- *Descriptive Statistics & Probability Theory* (ST 2024): exam-prep tutor
-- *Advanced Statistical Practicum* (WT 2025/26): supervised and graded two projects (8 total)
+- **Tutorial Instructor** — Descriptive Statistics & EDA (Winter 2023/24)
+- **Curriculum Developer** — Descriptive Statistics & Probability Theory (Summer 2024)
+- **Project Supervisor** — Advanced Statistical Practicum (Winter 2025/26)
 
 ## Skills
 **Programming:** R · Python · SAS · Bash<br>
