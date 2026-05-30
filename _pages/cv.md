@@ -12,7 +12,7 @@ redirect_from:
 {% include base_path %}
 
 <div class="download">
-  <a href="{{ "/files/cv_0226.pdf" | relative_url }}" class="btn btn--primary">
+  <a href="{{ "/files/cv_0526.pdf" | relative_url }}" class="btn btn--primary">
     Download full CV (PDF)
   </a>
 </div>
