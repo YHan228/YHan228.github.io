@@ -52,7 +52,7 @@ Thesis: *Robustness-Driven Feature Attribution in Genomic Deep Learning with Int
 ## Service & Leadership
 
 **Elected Member, Faculty Convention (`Fakultätskonvent`)** — Faculty of Informatics, Mathematics and Statistics, LMU Munich<br>
-*Term 2025–2026*
+*Terms 2025–2027*
 
 **Student Representative**, W2 professorship appointment committees, Department of Statistics, LMU Munich<br>
 *Mar 2025 – present*
