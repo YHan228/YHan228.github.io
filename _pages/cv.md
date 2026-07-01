@@ -12,7 +12,7 @@ redirect_from:
 {% include base_path %}
 
 <div class="download">
-  <a href="{{ "/files/cv_0526.pdf" | relative_url }}" class="btn btn--primary">
+  <a href="{{ "/files/cv_0701.pdf" | relative_url }}" class="btn btn--primary">
     Download full CV (PDF)
   </a>
 </div>
@@ -35,7 +35,7 @@ Thesis: *Robustness-Driven Feature Attribution in Genomic Deep Learning with Int
 *Oct 2024 – present* (remote)
 
 **Research Assistant & Statistical Consultant** — Statistical Consulting Unit (StaBLab), LMU Munich<br>
-*Apr 2024 – present*
+*Apr 2024 – Jun 2026*
 
 ## Teaching Experience
 **Teaching Assistant** — Department of Statistics, LMU Munich<br>
@@ -58,5 +58,5 @@ Thesis: *Robustness-Driven Feature Attribution in Genomic Deep Learning with Int
 *Mar 2025 – present*
 
 **Student Council Statistics & Data Science, LMU Munich**<br>
-Elected Member (*term 2025–2026*); Lead, Teaching Working Group<br>
+Elected Member (*two terms, 2025–2027*); Lead, Teaching Working Group<br>
 *Apr 2023 – present*
